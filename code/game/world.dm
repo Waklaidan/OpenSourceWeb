@@ -77,7 +77,6 @@ var/rtlog_path
 	load_admins()
 	LoadBansjob()
 	load_whitelist()
-#ifdef FARWEB_LIVE
 	load_db_whitelist()
 	load_db_bans()
 	load_comrade_list()
@@ -85,7 +84,6 @@ var/rtlog_path
 	load_villain_list()
 	build_donations_list()
 	get_story_id()
-#endif
 	href_logfile = file("data/logs/[server_language]-[current_server]/STORY[story_id]-[date_string] hrefs.htm")
 	diary = file("data/logs/[server_language]-[current_server]/STORY[story_id]-[date_string].log")
 	diaryofmeanpeople = file("data/logs/[server_language]-[current_server]/STORY[story_id]-[date_string] Attack.log")
@@ -104,7 +102,7 @@ var/rtlog_path
 	populate_seed_list()
 	src.update_status()
 	world.log << "--†SERVER LANGUAGE†--"
-	world.log << "[server_language] ON [src.port]"
+	world.log << "RU ON [src.port]"
 	processScheduler = new
 	thanatiGlobal = new
 	master_controller = new /datum/controller/game_controller()
@@ -232,7 +230,7 @@ var/rtlog_path
 	s += "<b>[vessel_name()]</b>";*/
 	s += "<b>[vessel_name()]</b> &#8212; "
 	s += " ("
-	s += "<a href=\"https://discord.gg/JcVcG6JxJm\">" //Change this to wherever you want the hub to link to.
+	s += "<a href=\"https://discord.gg/sFbsCcW9Ug\">" //Change this to wherever you want the hub to link to.
 //	s += "[game_version]"
 	s += "Dungeon"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
@@ -262,8 +260,8 @@ var/rtlog_path
 		features += "~[n] addict"
 
 	//if (!host && config && config.hostedby)
-	features += "<b>[server_language]ZONE</b>"
-	features += "<b>+\[18\]</b>"
+	features += "<b>RUZONE</b>"
+	features += "Russian farweb<b>+\[18\]</b>"
 
 	if (features)
 		s += "<br>[list2text(features, ", ")]"
